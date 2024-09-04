@@ -1,0 +1,79 @@
+---
+title: "Module 01 hw"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+##Question 2
+
+```{r}
+cars <- c("Truck", "Car", "SUV")
+mpg_ <- c(11,30,24)
+cost <- c(45000,25000,35000)
+
+df <- data.frame(cars,mpg_,cost)
+df
+```
+
+##Question 2a
+
+The first command is df[1,3] which selects the cost of the truck.
+The next command is df[1:3] which returns the first 3 rows from the dataframe. This means the entire dataframe was selected.
+Finally we have df[3] which returns the last column. This selects every value in the cost column.
+```{r}
+df[1,3]
+df[1:3]
+df[3]
+```
+
+##Question 3
+
+```{r}
+head(mtcars,3)
+tail(mtcars,5)
+```
+
+##Question 4
+
+```{r}
+# Categorical values
+colnames(mtcars)[2]
+colnames(mtcars)[10]
+# Continous values
+colnames(mtcars)[1]
+colnames(mtcars)[3]
+```
+
+##Question 5
+
+Running the command doesn't work at first because I didn't have ggplot2 installed. After running the installation you must import the library using library("ggplot2").
+The plot displays now but it doesn't have any points so we have to add them with geom_point().
+```{r}
+library("ggplot2")
+ggplot(mtcars, aes(x=disp, y=mpg)) + geom_point()
+```
+
+##Question 6
+
+This scatterplot shows the engine displacement in liters versus the highway fuel economy. The plot shows that there is a negative correlation between the two values and that the number of cylinders increases as the volume displaced increases.
+```{r}
+mpg
+ggplot(mpg,aes(x=displ,y=hwy)) + geom_point(aes(color=factor(cyl)))
+```
+
+##Question 7
+
+The drv column is a categorical value that tells us if the car is front wheel, rear wheel, or 4 wheel drive.
+The command facet_wrap(~ drv) seperates the plot into 3 different plots based on the drive of the car.
+This allows us to see that most cars with 4 cylinders tend to be front wheel drive and if cars are rear wheel then they're almost alwyas 8 cylinders. We can also see that front wheel drive tends to get better fuel efficeincy than 4 wheel drive.
+```{r}
+ggplot(mpg,aes(x=displ,y=hwy)) + geom_point(aes(color=factor(cyl))) + facet_wrap(~ drv)
+```
+

@@ -1,0 +1,28 @@
+{
+    "id": "A0046B45",
+    "path": "~/DA5020/Module 01/module01hw.Rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "3266022117",
+    "contents": "",
+    "dirty": false,
+    "created": 1705092251913.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "chunk_output_type": "inline",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "74,244",
+        "scrollLine": "51"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1705357413,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1705357413730,
+    "read_only": false,
+    "read_only_alternatives": []
+}
